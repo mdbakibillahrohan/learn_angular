@@ -1,0 +1,23 @@
+<h3>List of your Todos</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of Todos; let index = index">
+
+      <th scope="row">{{ index+1 }}</th>
+      <td>
+        <img class="me-2" style="width: 20px" />
+        {{ todo.title }}
+      </td>
+      <td>{{ todo.description }}</td>
+      <td><button (click)="onDeleteClick(todo)" class="btn btn-sm btn-danger">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
